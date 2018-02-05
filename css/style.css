@@ -5,8 +5,6 @@ h1, h2 {
     text-align:center;
 }
 p {
-    position: absolute;
-    top: 30%;
-    left: 10%;
+
 }
 @import "compass/css3";
