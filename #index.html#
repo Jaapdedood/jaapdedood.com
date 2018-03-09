@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaap de Dood</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+<!--            <a class="pure-menu-heading" href="#">Home</a> -->
+
+            <ul class="pur
+oe-menu-list">
+                <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item  menu-item-divided"><a href="/SophEE/" class="pure-menu-link">SophEE</a></li>
+                <li class="pure-menu-item"><a href="/ESW/" class="pure-menu-link">ESW</a></li>
+                <li class="pure-menu-item"><a href="/IoT/" class="pure-menu-link">IoT</a></li>
+                <li class="pure-menu-item menu-item-divided"><a href="/coursework/" class="pure-menu-link">Coursework</a></li>
+                <li class="pure-menu-item"><a href="/other/" class="pure-menu-link">Other</a></li>
+<!--                <li class="pure-menu-item ">
+                  <a href="#" class="pure-menu-link">Sit</a>
+                </li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ameeeeet</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">ipsum</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">ipsum</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">ipsum</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">ipsum</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>Jaap de Dood</h1>
+        </div>
+
+        <div class="content">
+          <p></p>
+
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <p>
+                Instructional Student Assistant<br>
+                B.S. in Electrical Engineering (Graduating Spring 2019), <a href="http://www.csulb.edu/">California State University, Long Beach</a><br>
+                jaapdood@gmail.com               
+              </p>
+              <p>
+                <a href="https://github.com/jaapdedood">Github</a> / <a href="https://www.linkedin.com/in/jaapdood/">LinkedIn</a> / <a href="/files/resume.pdf">Resume</a>
+              </p>              
+            </div>
+            <div class="pure-u-1-4">
+                <p></p>
+            </div>
+            <div class="pure-u-1-4">
+                <img class="pure-img-responsive" src="images/me.jpg" alt="Picture of me">
+            </div>
+          </div>
+            
+            <h2 class="content-subhead">Bio</h2>
+            <p>
+              I am an Undergraduate Student at CSULB, with a particular interest in embedded systems as my expertise lies in computer architecture, digital design and embedded programming. Most of my projects have been IoT projects, some in cooperation with the <a href="http://ewh.ieee.org/sb/csulb/">CSULB IEEE</a> student branch as well as the <a href="http://eswcsulb.wixsite.com/eswcsulb"> Engineers for a Sustainable World</a> student branch.
+            </p>
+            <p>
+              This website is intended to be a place for me to document my projects and share any work I believe may be useful to others.
+            </p>            
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="js/ui.js"></script>
+
+</body>
+</html>
