@@ -5,7 +5,6 @@ body {
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
-    border: 1px solid #bfbfbf;
     padding: 3px;
     border-radius: 0px;
     float: left;
@@ -21,7 +20,7 @@ Add transition to containers so they can push in and out.
     -moz-transition: all 0.2s ease-out;
     -ms-transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;y
 }
 
 /*
