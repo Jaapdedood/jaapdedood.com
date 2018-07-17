@@ -1,152 +1,154 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaap de Dood</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaap de Dood</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/layouts/side-menu.css">
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
+  <link rel="stylesheet" href="/css/layouts/side-menu.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
 
-    <div id="layout">
-      <!-- Menu toggle -->
-      <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-      </a>
+  <div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+    </a>
 
-      <div id="menu">
-        <div class="pure-menu">
-          <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item pure-menu-selected"><a href="/Micromouse/" class="pure-menu-link">Micromouse</a></li>
-            <li class="pure-menu-item  menu-item-divided"><a href="/SophEE/" class="pure-menu-link">SophEE</a></li>
-            <li class="pure-menu-item"><a href="/IoT/" class="pure-menu-link">Other Projects</a></li>
-          </ul>
-        </div>
+    <div id="menu">
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item pure-menu-selected"><a href="/Micromouse/" class="pure-menu-link">Micromouse</a></li>
+          <li class="pure-menu-item  menu-item-divided"><a href="/SophEE/" class="pure-menu-link">SophEE</a></li>
+          <li class="pure-menu-item"><a href="/other/" class="pure-menu-link">Other Projects</a></li>
+        </ul>
       </div>
-      <div id="main">
-        <div class="header" style="text-align:center;">
-          <h1>Micromouse</h1>
-          <h2></h2>
+    </div>
+    <div id="main">
+      <div class="header" style="text-align:center;">
+        <h1>Micromouse</h1>
+        <h2></h2>
+      </div>
+      <div class="content">
+        <h1>Description</h1>
+        <p>Micromouse is a world famous robotics competition where a small robot has to search, solve and speedrun a 16x16 maze. I joined a team with my two good friends Ricardo Alcaraz and Roswell Tiongco to attempt to build CSULB's best mouse yet.</p>
+        <div class="pure-g">
+          <div class="pure-u-1-4">
+            <img class="pure-img-responsive" src="/images/maze.jpg" alt="Maze">
+          </div>
+          <div class="pure-u-1-4">
+            <img class="pure-img-responsive" src="/images/pcb4.jpg" alt="PCB">
+          </div>
+          <div class="pure-u-1-4">
+            <img class="pure-img-responsive" src="/images/mouse.jpg" alt="Mouse in Maze">
+          </div>
+          <div class="pure-u-1-4">
+            <img class="pure-img-responsive" src="/images/pmu.jpg" alt="schematic">
+          </div>
         </div>
-        <div class="content">
-          <h1>Description</h1>
-          <p>Micromouse is a world famous robotics competition where a small robot has to search, solve and speedrun a 16x16 maze. I joined a team with my two good friends Ricardo Alcaraz and Roswell Tiongco to attempt to build CSULB's best mouse yet.</p>
-          <div class="pure-g">
-            <div class="pure-u-1-4">
-              <img class="pure-img-responsive" src="/images/maze.jpg" alt="Maze">
-            </div>
-            <div class="pure-u-1-4">
-              <img class="pure-img-responsive" src="/images/pcb4.jpg" alt="PCB">
-            </div>
-            <div class="pure-u-1-4">
-              <img class="pure-img-responsive" src="/images/mouse.jpg" alt="Mouse in Maze">
-            </div>
-            <div class="pure-u-1-4">
-              <img class="pure-img-responsive" src="/images/pmu.jpg" alt="schematic">
-            </div>
+
+        <h1>First Attempt</h1>
+        <iframe src="https://drive.google.com/file/d/19lHixykO896JS6IuYFGpMKPpRqW8Yf_t/preview" width="640" height="480"></iframe>
+        <p>Above you can see a short video of our first robot in action.</p>
+        <p> We wanted to create a very simple, easy to develop robot for our first attempt without worrying too much about speed. This is why we decided to use stepper motors, an arduino teensy and ultrasonic sensors. In hindsight, these were poor hardware choices but A LOT was learned in the process of developing this cute little tractor. </p>
+        <p>The main issue with the hardware is that the only input to the control system is the ultrasonic sensor readings. The ultrasonic measurements are too low resolution and lack the stability to base a reliable  control system on. As a result, the robot only makes the end of the maze if we're lucky enough that it doesn't hit any walls.</p>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <img class="pure-img-responsive" src="/images/pcb5.png" alt="PCB">
           </div>
-
-          <h1>First Attempt</h1>
-          <iframe src="https://drive.google.com/file/d/19lHixykO896JS6IuYFGpMKPpRqW8Yf_t/preview" width="640" height="480"></iframe>
-          <p>Above you can see a short video of our first robot in action.</p>
-          <p> We wanted to create a very simple, easy to develop robot for our first attempt without worrying too much about speed. This is why we decided to use stepper motors, an arduino teensy and ultrasonic sensors. In hindsight, these were poor hardware choices but A LOT was learned in the process of developing this cute little tractor. </p>
-          <p>The main issue with the hardware is that the only input to the control system is the ultrasonic sensor readings. The ultrasonic measurements are too low resolution and lack the stability to base a reliable  control system on. As a result, the robot only makes the end of the maze if we're lucky enough that it doesn't hit any walls.</p>
-          <div class="pure-g">
-            <div class="pure-u-1-2">
-              <img class="pure-img-responsive" src="/images/pcb5.png" alt="PCB">
-            </div>
-            <div class="pure-u-1-2">
-              <img class="pure-img-responsive" src="/images/schematic1.png" alt="PCB">
-            </div>
+          <div class="pure-u-1-2">
+            <img class="pure-img-responsive" src="/images/schematic1.png" alt="PCB">
           </div>
-          <h1>The Real Deal</h1>
-          <p>Using the experience and knowledge acquired developing the last robot, we are currently building (what will hopefully be) a very fast robot.</p>
-          <p>Features:</p>
-          <table class="pure-table">
-            <tbody>
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">Width</td>
-                <td>75mm</td>
-              </tr>
+        </div>
+        <h1>The Real Deal</h1>
+        <p>Using the experience and knowledge acquired developing the last robot, we are currently building (what will hopefully be) a very fast robot.</p>
+        <p>Features:</p>
+        <table class="pure-table">
+          <tbody>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">Width</td>
+              <td>75mm</td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">Length</td>
-                <td>105mm (excluding "tail")</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">Length</td>
+              <td>105mm (excluding "tail")</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">Weight</td>
-                <td>TBD</td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">Weight</td>
+              <td>TBD</td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">Tires</td>
-                <td>Kyosho MZT301-20 LM (available on Ebay)</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">Tires</td>
+              <td>Kyosho MZT301-20 LM (available on Ebay)</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">CPU</td>
-                <td>Tensilica Xtensa LX6 (in ESP-WROOM-32 module)</td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">CPU</td>
+              <td>Tensilica Xtensa LX6 (in ESP-WROOM-32 module)</td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">MCU features</td>
-                <td>160/240MhHz, 520KiB SRAM, Wi-Fi 802.11 b/g/n, Bluetooth v4.2 BR/DER and BLE</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">MCU features</td>
+              <td>160/240MhHz, 520KiB SRAM, Wi-Fi 802.11 b/g/n, Bluetooth v4.2 BR/DER and BLE</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">Power Regulation</td>
-                <td>TPS65400 - 5v 5A, 5V 4A, 2V 2A, 3.3V 0.5A, TPS61088 - 12V Boost </td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">Power Regulation</td>
+              <td>TPS65400 - 5v 5A, 5V 4A, 2V 2A, 3.3V 0.5A, TPS61088 - 12V Boost </td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">Battery</td>
-                <td>Tattu 300mAh 7.4V 45C 2S1P LiPo</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">Battery</td>
+              <td>Tattu 300mAh 7.4V 45C 2S1P LiPo</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">IR Emitters/Receivers</td>
-                <td>SFH4550/TEFT4300</td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">IR Emitters/Receivers</td>
+              <td>SFH4550/TEFT4300</td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">Gyroscope</td>
-                <td>MPU-6500</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">Gyroscope</td>
+              <td>MPU-6500</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">Display</td>
-                <td>0.96 inch SSD1306 128x64 yellow/blue OLED</td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">Display</td>
+              <td>0.96 inch SSD1306 128x64 yellow/blue OLED</td>
+            </tr>
 
-              <tr>
-                <td style="font-weight:bold;">Motors/Encoders</td>
-                <td>Testing in progress</td>
-              </tr>
+            <tr>
+              <td style="font-weight:bold;">Motors/Encoders</td>
+              <td>Testing in progress</td>
+            </tr>
 
-              <tr class="pure-table-odd">
-                <td style="font-weight:bold;">Ground effect fan</td>
-                <td>Testing in progress</td>
-              </tr>
+            <tr class="pure-table-odd">
+              <td style="font-weight:bold;">Ground effect fan</td>
+              <td>Testing in progress</td>
+            </tr>
 
-            </tbody>
-          </table>
-          <p></p>
-          <div class="pure-g">
-            <div class="pure-u-1-2">
-              <img class="pure-img-responsive" src="/images/geber.png" alt="PCB">
-            </div>
-            <div class="pure-u-1-2">
-              <img class="pure-img-responsive" src="/images/pcb3.png" alt="PCB">
-            </div>
-            <img class="pure-img-responsive" src="/images/schematic2.png" alt="PCB">
+          </tbody>
+        </table>
+        <p></p>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <img class="pure-img-responsive" src="/images/geber.png" alt="PCB">
           </div>
-            <p><a href="v2schematic.pdf">Full schematic pdf</a> </p>
-</div>
-  </body></html>
+          <div class="pure-u-1-2">
+            <img class="pure-img-responsive" src="/images/pcb3.png" alt="PCB">
+          </div>
+          <img class="pure-img-responsive" src="/images/schematic2.png" alt="PCB">
+        </div>
+        <p><a href="v2schematic.pdf">Full schematic pdf</a> </p>
+      </div>
+      <script src="js/ui.js"></script>
+</body>
+</html>
