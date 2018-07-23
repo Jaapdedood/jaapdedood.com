@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaap de Dood</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/layouts/side-menu.css">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+
+      <div id="menu">
+        <div class="pure-menu">
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item menu-item-divided"><a href="/Micromouse/" class="pure-menu-link">Micromouse</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/Code/" class="pure-menu-link">Code</a></li>
+            <li class="pure-menu-item"><a href="/SophEE/" class="pure-menu-link menu-item-divided">SophEE</a></li>
+            <li class="pure-menu-item "><a href="/other/" class="pure-menu-link">Other Projects</a></li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="header" style="text-align:center;">
+          <h1>Code</h1>
+          <h2>Examples that I enjoyed working on most</h2>
+        </div>
+        <div class="content">
+          <h1>Flood Fill Pathfinding Algorithm</h1>
+          <p>A powerful method of maze solving used for our <a href="/Micromouse/">Micromouse</a> robot.</p>
+          <h2>How it works</h2>
+          <p>The maze is divided into cells, and the shortest distance from each cell to the goal is calculated. Initially, it is assumed there are no walls in the maze.</p>
+          <p>Then, as the mouse tries to reach the goal by moving to the neighboring cell with the lowest distance, the distances are updated every time a wall is discovered. </p>
+          <p>This is repeated, and so the mouse is able to map out the maze and the respective distances to the goal of each cell.</p>
+          <p>Upon returning to the start, it is simply a matter of connecting the shortest distances to derive a path that leads straight to the goal.</p>
+          <div class="pure-g">
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="/images/floodfill1.png">
+            </div>
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="/images/floodfill2.png">
+            </div>
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="/images/floodfill3.png">
+            </div>
+            <div class="pure-u-1-4">
+              <img class="pure-img-responsive" src="/images/floodfill4.png">
+            </div>
+          </div>
+          <p><a href="http://micromouseusa.com/?page_id=1342">Images from Green Ye's micromouse lecture slides.</a> </p>
+
+          <h2>Pseudocode</h2>
+          <p>
+            <pre>
+create two dimensional array 'distance'
+create two dimensional array 'walls'
+
+position = bottom left coordinate of maze
+
+for all elements in walls
+    element = empty
+
+for all elements in distance
+    element = shortest distance to goal
+
+while position != goal
+    if a new wall is discovered
+        push current coordinate to stack
+        for all accessible neighboring cells
+            push neighboring cell coordinates to stack
+
+        while !stack.isEmpty
+            coordinate = pop from stack
+
+            if distance != lowest distance of neighbors + 1
+                distance = lowest distance of neighbors + 1
+
+                for all accessible neighboring cells
+                    push neighboring cell coordinates to stack
+    move to neighbor with lowest distance
+            </pre>
+          </p>
+          <p>A stack approach like this is essential, since using recursion will fill up memory much faster on our microcontroller. With a solid understanding of the algorithm and the functions that were going to be needed, it was time to move on to the implementation.</p>
+
+          <h2>C++ Implementation</h2>
+          <p>Since the architecture we are using for our mouse is mostly supported by C++ compilers, this was the obvious language to use.</p>
+          <p>The full code can be viewed on our project's <a href="https://github.com/ricardoalcaraz/TheJerrys">Github</a> page and is free for use.</p>
+          <p>In order to easily test the algorithm and mouse functions, the code includes a DebugTools class. The printMaze function, for example, prints an ASCII maze including distance values and walls.</p>
+          <img class="pure-img-responsive" src="/images/printmaze2.png" style="padding-right:10px">
+          <p>Besides the outer edge walls, each wall is displayed twice. This is intended, since walls are also stored in memory twice (one from each neighboring cell).</p>
+          <p>A function like this is essential for debugging and will also be used during live testing of the mouse, as it has capabilities for bluetooth serial communication.</p>
+        <script src="/js/ui.js"></script>
+  </body>
+</html>
