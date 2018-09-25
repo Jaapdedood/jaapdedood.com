@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/layouts/side-menu.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/layouts/side-menu.css">
+    <link rel="stylesheet" href="../css/styles.css">
   </head>
   <body>
 
@@ -98,10 +98,10 @@ while position != goal
           <p>Since the architecture we are using for our mouse is mostly supported by C++ compilers, this was the obvious language to use.</p>
           <p>The full code can be viewed on our project's <a href="https://github.com/ricardoalcaraz/TheJerrys">Github</a> page and is free for use.</p>
           <p>In order to easily test the algorithm and mouse functions, the code includes a DebugTools class. The printMaze function, for example, prints an ASCII maze including distance values and walls.</p>
-          <img class="pure-img-responsive" src="/images/printmaze2.png" style="padding-right:10px">
+          <img class="pure-img-responsive" src="../images/printmaze2.png" style="padding-right:10px">
           <p>Besides the outer edge walls, each wall is displayed twice. This is intended, since walls are also stored in memory twice (one from each neighboring cell).</p>
-          <p>A function like this is essential for debugging and will also be used during live testing of the mouse, as it has capabilities for bluetooth serial communication.</p>
-
+          <p>This function was extremely useful for debugging, and will also be used during live testing of the mouse, as it has capabilities for bluetooth serial communication.</p>
+          <br><br><br>
           <h1>3DoT Bootloader</h1>
           <p>Throughout this summer, I cooperated with Professor Gary Hill on a development board that he uses for his classes at CSULB, the "3DoT" board. The board uses the ATMega32u4 microcontroller which is great for its very small footprint thanking to the "self-programming flash program memory".</p>
           <p>The issue most development boards that use this chip have, however, is that it has to be put into bootloader mode by tapping a reset button - giving you 1-2 seconds to upload your code. Some development boards have tried to improve this by giving you the ability to double-tap the button - giving you 8 seconds to upload your code to the board. Nonetheless, this is still a pain to use. Especially when using the Arduino IDE, which takes a few seconds compiling your code every time you try to upload it. It usually takes 2-3 tries until the code successfully uploads, so we wanted a better solution.</p>
