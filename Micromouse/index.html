@@ -78,68 +78,86 @@
         <p>Features:</p>
         <table class="pure-table">
           <tbody>
+            <tr>
+              <td style="font-weight:bold;"></td>
+              <td style="font-weight:bold;">v2.0 (cancelled)</td>
+              <td style="font-weight:bold;">v3.0</td>
+            </tr>
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">Width</td>
+              <td>75mm</td>
               <td>75mm</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">Length</td>
               <td>105mm (excluding "tail")</td>
+              <td>105mm</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">Weight</td>
+              <td>n/a</td>
               <td>TBD</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">Tires</td>
+              <td>Kyosho MZT301-20 LM</td>
               <td>Kyosho MZT301-20 LM (available on Ebay)</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">CPU</td>
               <td>Tensilica Xtensa LX6 (in ESP-WROOM-32 module)</td>
+              <td>STM32F405RG</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">MCU features</td>
               <td>160/240MhHz, 520KiB SRAM, Wi-Fi 802.11 b/g/n, Bluetooth v4.2 BR/DER and BLE</td>
+              <td>160Mhz, 192+4 Kbytes SRAM, 1MB Flash. 9 GPIO Ports of up to 16 pins each.</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">Power Regulation</td>
+              <td>TPS65400 - 5v 5A, 5V 4A, 2V 2A, 3.3V 0.5A, TPS61088 - 12V Boost </td>
               <td>TPS65400 - 5v 5A, 5V 4A, 2V 2A, 3.3V 0.5A, TPS61088 - 12V Boost </td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">Battery</td>
               <td>Tattu 300mAh 7.4V 45C 2S1P LiPo</td>
+              <td>Tattu 300mAh 7.4V 45C 2S1P LiPo</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">IR Emitters/Receivers</td>
+              <td>SFH4550/TEFT4300</td>
               <td>SFH4550/TEFT4300</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">Gyroscope</td>
               <td>MPU-6500</td>
+              <td>MPU-6500</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">Display</td>
               <td>0.96 inch SSD1306 128x64 yellow/blue OLED</td>
+              <td>0.96 inch SSD1306 128x64 yellow/blue OLED</td>
             </tr>
 
             <tr>
               <td style="font-weight:bold;">Motors/Encoders</td>
+              <td>n/a</td>
               <td>Testing in progress</td>
             </tr>
 
             <tr class="pure-table-odd">
               <td style="font-weight:bold;">Ground effect fan</td>
+              <td>n/a</td>
               <td>Testing in progress</td>
             </tr>
 
@@ -156,7 +174,9 @@
           <img class="pure-img-responsive" src="/images/schematic2.png" alt="PCB">
         </div>
         <p><a href="v2schematic.pdf">Full schematic pdf</a> </p>
-        <p><a href="https://github.com/Jaapdedood/Micromouse2019">2019 Github Repository</a> </p>
+        <p><a href="https://github.com/ricardoalcaraz/TheJerrys">2019 Github Repository</a> </p>
+        <h1>v3.0 Update</h1>
+        <p>Trying to use the ESP-32 was a fun experiment, however, it was discovered far too late that, despite being broken out on the ESP-WROOM-32 module, GPIOs 6-11 are connected to the integrated SPI flash on the chip. Trying to flash a program while these are connected to anything causes errors. With all of these pins out of the question, the ESP-32 simply doesn't have enough pins left for our design, so we have had to go back to the more mainstream option of an STM32F405 as the MCU. </p>
       </div>
       <script src="/js/ui.js"></script>
 </body>

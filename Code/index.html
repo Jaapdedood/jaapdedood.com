@@ -101,6 +101,16 @@ while position != goal
           <img class="pure-img-responsive" src="/images/printmaze2.png" style="padding-right:10px">
           <p>Besides the outer edge walls, each wall is displayed twice. This is intended, since walls are also stored in memory twice (one from each neighboring cell).</p>
           <p>A function like this is essential for debugging and will also be used during live testing of the mouse, as it has capabilities for bluetooth serial communication.</p>
-        <script src="/js/ui.js"></script>
+
+          <h1>3DoT Bootloader</h1>
+          <p>Throughout this summer, I cooperated with Professor Gary Hill on a development board that he uses for his classes at CSULB, the "3DoT" board. The board uses the ATMega32u4 microcontroller which is great for its very small footprint thanking to the "self-programming flash program memory".</p>
+          <p>The issue most development boards that use this chip have, however, is that it has to be put into bootloader mode by tapping a reset button - giving you 1-2 seconds to upload your code. Some development boards have tried to improve this by giving you the ability to double-tap the button - giving you 8 seconds to upload your code to the board. Nonetheless, this is still a pain to use. Especially when using the Arduino IDE, which takes a few seconds compiling your code every time you try to upload it. It usually takes 2-3 tries until the code successfully uploads, so we wanted a better solution.</p>
+          <p>The solution Professor Hill came up with is a DP3T switch, to set the board to OFF, ON or BOOT. This allows you to simply switch the board to BOOT and take as much time as you need to upload your code. To achieve this, I modified the <a href="https://github.com/adafruit/Caterina-Bootloader">"Caterina" bootloader</a> by Adafruit to work with the 3-position switch. The full code can be viewed <a href="https://github.com/Jaapdedood/3DoTBootloader"> here</a>.</p>
+          <p>One of the major breakthroughs I had while developing this code came from a custom bootloader developed by <a href="https://github.com/NicoHood">Nico Hood</a>. I discovered I could easily reset the MCU by enabling the watchdog (configured to system reset mode by default) and calling an endless while(1) loop. With this in mind, (oversimplifying a little) I can simply continuosly reset the mcu while the switch is in "BOOT" mode, waiting for code to be uploaded. If the switch is set to "ON", one of the pins on the board changes to a LOW and the bootloader will jump to the first address of the program uploaded to the board. In the process, I was also able to reduce the size of the bootloader by a few hundred bytes.</p>
+          <img class="pure-img-responsive" src="/images/bootloader.png" style="padding-right:10px">
+          <p><i>The bootloader conveniently integrated into the Arduino IDE.</i></p>
+
+          <p>See also: <a href="https://www.arxterra.com/troubleshooting-bootloader-burning/">This guide I wrote</a> on burning fuses and uploading bootloaders to ATMega32u4-based boards.</p>
+            <script src="/js/ui.js"></script>
   </body>
 </html>
