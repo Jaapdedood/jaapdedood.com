@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaap de Dood</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/layouts/side-menu.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+    </a>
+
+    <div id="menu">
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="/Micromouse/" class="pure-menu-link">Micromouse</a></li>
+          <li class="pure-menu-item"><a href="/Code/" class="pure-menu-link">Code</a></li>
+          <li class="pure-menu-item"><a href="/SophEE/" class="pure-menu-link menu-item-divided">SophEE</a></li>
+          <li class="pure-menu-item "><a href="/other/" class="pure-menu-link">Other Projects</a></li>
+        </ul>
+        </ul>
+      </div>
+    </div>
+
+    <div id="main">
+      <div class="header" style="text-align:center;">
+        <h1>Programming ATtiny24(a)</h1>
+        <h2></h2>
+      </div>
+      <div class="content">
+        <p><li>Follow the instructions for "Installing ATtiny support in Arduino 1.6.4" here: <a href="http://highlowtech.org/?p=1695">http://highlowtech.org/?p=1695</a> </li>
+          <li>Copy the text below and paste it at the bottom of C:\Users\yourusername\AppData\Local\Arduino15\packages\attiny\hardware\avr\1.0.2\boards.txt</li></p>
+        <pre>
+attiny24.name=ATtiny24 (internal 1 MHz clock)
+attiny24.bootloader.low_fuses=0x62
+attiny24.bootloader.high_fuses=0xdf
+attiny24.bootloader.extended_fuses=0xff
+attiny24.upload.maximum_size=2048
+attiny24.build.mcu=attiny24
+attiny24.build.f_cpu=1000000L
+attiny24.build.core=arduino:arduino
+attiny24.build.variant=tiny14
+
+attiny24-8.name=ATtiny24 (internal 8 MHz clock)
+attiny24-8.bootloader.low_fuses=0xe2
+attiny24-8.bootloader.high_fuses=0xdf
+attiny24-8.bootloader.extended_fuses=0xff
+attiny24-8.upload.maximum_size=2048
+attiny24-8.build.mcu=attiny24
+attiny24-8.build.f_cpu=8000000L
+attiny24-8.build.core=arduino:arduino
+attiny24-8.build.variant=tiny14</pre>
+        <p><li>(Re)Start the Arduino IDE</li>
+          <li>Connect the Arduino Uno pins to the Attiny as follows:</li>
+          <pre>
+   ATtiny   |     UNO
+ -----------------------
+ VCC (1)    |    5v
+ GND (14)   |    GND
+ RESET (4)  |    10
+ MOSI (7)   |    11
+ MISO (8)   |    12
+ SCK (9)    |    13</pre>
+          <li>In the Arduino IDE, go to File->Examples->ArduinoISP</li>
+          <li>Go to Tools->Board and select "Arduino UNO"</li>
+          <li>Go to Tools->Programmer and make sure "AVRISP mkII" is selected</li>
+          <li>Upload the sketch to the UNO</li>
+          <br>
+          <li>Open the sketch you want to write to the ATtiny</li>
+          <li>Go to Tools->Board and select the Attiny24 with whichever internal clock you have (probably 8MHz)</li>
+          <li>Go to Tools->Programmer and set it to "Arduino as ISP"</li>
+          <li>Upload</li>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="/js/ui.js"></script>
+</body>
+</html>
